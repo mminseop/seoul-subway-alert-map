@@ -61,7 +61,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1 className="title">실시간 지하철 알림정보</h1>
+      <h1 className="title">서울교통공사-지하철 알림정보</h1>
 
       <button onClick={fetchAlerts} className="fetch-button" disabled={loading}>
         {loading ? "불러오는 중..." : "실시간 정보 다시 불러오기"}

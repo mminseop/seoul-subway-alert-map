@@ -40,8 +40,6 @@
   padding: 20px 25px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.25s ease;
-  cursor: default;
-  user-select: text;
 }
 
 .alert-card:hover {
@@ -71,7 +69,6 @@
   font-size: 0.85rem;
   color: #888;
   font-style: italic;
-  user-select: none;
 }
 
 /* 로딩, 에러, 데이터 없음 메시지 */
@@ -80,7 +77,6 @@
   font-size: 1.2rem;
   color: #666;
   margin-top: 50px;
-  user-select: none;
 }
 
 .message.error {
@@ -92,7 +88,7 @@
 }
 
 .message.loading {
-  color: #004aad;
+  color: #555;
 }
 
 /* LodingIndicator 시작 */
