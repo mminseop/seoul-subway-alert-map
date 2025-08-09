@@ -1,42 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f5f7fa;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+}
+
+.app-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 10px 20px 40px;
+}
+
+/* 제목 스타일 */
+.title {
   text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #004aad;
+  /* margin-bottom: 15px; */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* 알림 카드 컨테이너 */
+.alerts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* 알림 카드 개별 스타일 */
+.alert-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.25s ease;
+  cursor: default;
+  user-select: text;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.alert-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 74, 173, 0.25);
 }
 
-.card {
-  padding: 2em;
+/* 알림 제목 */
+.alert-title {
+  margin: 0 0 10px 0;
+  font-size: 1.3rem;
+  color: #003d8c;
+  font-weight: 600;
 }
 
-.read-the-docs {
+/* 알림 내용 */
+.alert-content {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #444;
+  white-space: pre-wrap; /* 줄바꿈 유지 */
+}
+
+/* 알림 시간 (있으면 보여주기) */
+.alert-time {
+  margin-top: 12px;
+  font-size: 0.85rem;
   color: #888;
+  font-style: italic;
+  user-select: none;
+}
+
+/* 로딩, 에러, 데이터 없음 메시지 */
+.message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin-top: 50px;
+  user-select: none;
+}
+
+.message.error {
+  color: #d93025;
+}
+
+.message.no-data {
+  color: #555;
+}
+
+.message.loading {
+  color: #004aad;
+}
+
+/* LodingIndicator 시작 */
+.loading-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.loading-text {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #555;
+}
+/* LodingIndicator 끝 */
+
+.fetch-button {
+  display: block;
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin: 20px auto;
+}
+
+.fetch-button:hover:not(:disabled) {
+  background-color: #357abd;
+}
+
+.fetch-button:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+  box-shadow: none;
+  color: #f0f0f0;
 }
