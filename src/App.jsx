@@ -5,7 +5,7 @@ import "./App.css";
 import LoadingIndicator from "./components/LoadingIndicator";
 
 function App() {
-  const [alerts, setAlerts] = useState([]); // 초기값 빈 배열로 변경
+  const [alerts, setAlerts] = useState([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -24,7 +24,11 @@ function App() {
 
       // item 데이터 추출 (배열 또는 단일 객체 처리)
       const rawItems = json?.response?.body?.items?.item;
-      const items = Array.isArray(rawItems) ? rawItems : rawItems ? [rawItems] : [];
+      const items = Array.isArray(rawItems)
+        ? rawItems
+        : rawItems
+        ? [rawItems]
+        : [];
 
       setAlerts(items);
     } catch (err) {
